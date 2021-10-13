@@ -1,29 +1,21 @@
-import { Switch, Route, Link } from 'react-router-dom'
-import Homepage from './pages/homepage/Homepage'
-import './App.css'
+import { Switch, Route, Link } from "react-router-dom";
+import Homepage from "./pages/homepage/Homepage";
+import "./App.css";
+import ShopPage from "./pages/shop/ShopPage";
 
 function App() {
   return (
     <>
-      <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/about'>About</Link>
-        </li>
-      </ul>
-
       <Switch>
-        <Route exact path='/'>
+        <Route exact path="/">
           <Homepage />
         </Route>
-        <Route path='/about'>
-          <div>about</div>
+        <Route path="/shop">
+          <ShopPage />
         </Route>
       </Switch>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
