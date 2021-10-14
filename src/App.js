@@ -3,6 +3,7 @@ import Homepage from './pages/homepage/Homepage'
 import './App.css'
 import ShopPage from './pages/shop/ShopPage'
 import Header from './components/header/Header'
+import SignInAndSignUp from './pages/signin-and-signup/SignInAndSignUp'
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         </Route>
         <Route path='/contact'>
           <ShopPage />
+        </Route>
+        <Route path='/signin'>
+          <SignInAndSignUp />
         </Route>
       </Switch>
     </>
