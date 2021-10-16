@@ -1,12 +1,14 @@
-import SignIn from '../../components/sign-in/SignIn'
-import './SignInAndSignUp.styles.scss'
+import SignIn from "../../components/sign-in/SignIn";
+import SignUp from "../../components/sign-up/SignUp";
+import "./SignInAndSignUp.styles.scss";
 
 const SignInAndSignUp = () => {
   return (
-    <div className='sign-in-and-sign-up'>
+    <div className="sign-in-and-sign-up">
       <SignIn />
+      <SignUp />
     </div>
-  )
-}
+  );
+};
 
-export default SignInAndSignUp
+export default SignInAndSignUp;
