@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import CustomButton from "../custom-button/CustomButton";
 import FormInput from "../form-input/FormInput";
 import "./SignUp.styles.scss";
-import { createUserProfileDocument } from "../../firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 
 const SignUp = () => {
   const [displayName, setDisplayName] = useState("");
@@ -17,8 +17,12 @@ const SignUp = () => {
       return;
     }
     try {
-      const auth = getAuth();
-      const { user } = createUserWithEmailAndPassword(auth, email, password);
+      const { user } = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log(user);
       await createUserProfileDocument(user, { displayName });
       setDisplayName("");
       setEmail("");
