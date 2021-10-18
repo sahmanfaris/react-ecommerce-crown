@@ -6,12 +6,8 @@ import ShopPage from "./pages/shop/ShopPage";
 import Header from "./components/header/Header";
 import SignInAndSignUp from "./pages/signin-and-signup/SignInAndSignUp";
 import "./App.css";
-import {
-  auth,
-  createUserProfileDocument,
-  firestore,
-} from "./firebase/firebase.utils";
-import { doc, onSnapshot } from "firebase/firestore";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import { onSnapshot } from "firebase/firestore";
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -31,7 +27,7 @@ const App = () => {
   }, []);
   return (
     <>
-      <Header currentUser={currentUser} />
+      <Header />
       <Switch>
         <Route exact path="/">
           <Homepage />
